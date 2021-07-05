@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000;
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb://Anas:${process.env.MONGO}@cluster0-shard-00-00.9r3ac.mongodb.net:27017,cluster0-shard-00-01.9r3ac.mongodb.net:27017,cluster0-shard-00-02.9r3ac.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-9wuyd8-shard-0&authSource=admin&retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 const { getAll, addFav, getFav, updateFav, deleteFav } = require('./controllers/pizza.controller')
